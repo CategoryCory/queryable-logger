@@ -26,7 +26,21 @@ def test_db_col_info() -> list[tuple]:
 
 
 class TestDBManager:
+    """
+    Unit tests for the DBManager class.
+    """
+
     def test_db_created(self, db_path: Path, schema_path: Path) -> None:
+        """
+        Tests that creating an instance of DBManager and calling `initialize_database`
+        properly creates the database file.
+
+        :param db_path: The path of the database file.
+        :type db_path: Path
+        :param schema_path: The path of the schema file.
+        :type schema_path: Path
+        :return: None
+        """
         test_db_manager = DBManager(db_path, schema_path)
         test_db_manager.initialize_database()
         assert db_path.exists()
@@ -34,6 +48,17 @@ class TestDBManager:
     def test_db_schema_applied(
         self, db_path: Path, schema_path: Path, test_db_col_info: list[tuple]
     ) -> None:
+        """
+        Tests that the DBManager applies schema correctly when initialized.
+
+        :param db_path: The path of the database file.
+        :type db_path: Path
+        :param schema_path: The path of the schema file.
+        :type schema_path: Path
+        :param test_db_col_info: The expected test database column info.
+        :type test_db_col_info: list[tuple]
+        :return: None
+        """
         test_db_manager = DBManager(db_path, schema_path)
         test_db_manager.initialize_database()
         with sqlite3.connect(db_path) as conn:
