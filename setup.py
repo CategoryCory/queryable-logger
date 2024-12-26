@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="queryable_logger",
-    version="0.1.0",
+    version="0.0.1",
     author="Cory Coward",
     author_email="corydottech@gmail.com",
     url="https://github.com/CategoryCory/queryable_logger",
