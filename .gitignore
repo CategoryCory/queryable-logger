@@ -53,6 +53,10 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# SQLite
+*.sqlite
+*.db
+
 # Translations
 *.mo
 *.pot
@@ -184,6 +188,8 @@ pyrightconfig.json
 .idea/misc.xml
 .idea/vcs.xml
 .idea/.gitignore
+.idea/dataSources.xml
+.idea/sqldialects.xml
 
 # CMake
 cmake-build-*/
